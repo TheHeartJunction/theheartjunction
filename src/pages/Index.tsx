@@ -36,10 +36,10 @@ const featuredProducts = [
   },
   {
     id: 2,
-    name: "Custom Gift Set",
-    price: 999,
-    description: "Personalized gift collection for special occasions",
-    image: ""
+    name: "🖤 Midnight Whispers",
+    price: 549,
+    description: "Mysterious and elegant black ribbon bouquet, perfect for those who appreciate dark aesthetics",
+    image: "/lovable-uploads/c3201a07-f9e8-4141-bbe3-cfb46ab164fa.png"
   },
   {
     id: 3,
