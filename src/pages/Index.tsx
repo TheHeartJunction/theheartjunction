@@ -43,10 +43,10 @@ const featuredProducts = [
   },
   {
     id: 3,
-    name: "Love Letter Bundle",
-    price: 599,
-    description: "Handwritten letters with artistic touches",
-    image: ""
+    name: "🍫 Choco Bliss Bouquet",
+    price: 250,
+    description: "A delightful fusion of luxury and sweetness, customizable with your favorite chocolates",
+    image: "/lovable-uploads/c80f2fce-6094-49c0-a7f0-681f3b58a7e1.png"
   }
 ];
 
