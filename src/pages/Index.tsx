@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Gift, Heart, PenTool, Package } from "lucide-react";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const categories = [
   {
@@ -25,6 +26,30 @@ const categories = [
   },
 ];
 
+const featuredProducts = [
+  {
+    id: 1,
+    name: "Mini Bloom",
+    price: 350,
+    description: "A tiny bundle of joy, featuring four delicate handcrafted ribbon flowers",
+    image: "/lovable-uploads/22b45637-40e2-4c88-ad58-d838adb92560.png"
+  },
+  {
+    id: 2,
+    name: "Custom Gift Set",
+    price: 999,
+    description: "Personalized gift collection for special occasions",
+    image: ""
+  },
+  {
+    id: 3,
+    name: "Love Letter Bundle",
+    price: 599,
+    description: "Handwritten letters with artistic touches",
+    image: ""
+  }
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-heart-100 to-white">
@@ -32,7 +57,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 text-center animate-fadeIn">
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-serif">
           Connecting Hearts, <span className="text-heart-200">With Arts</span>
         </h1>
         <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -45,7 +70,7 @@ const Index = () => {
 
       {/* Categories Section */}
       <section className="py-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Gift Categories</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 font-serif">Our Gift Categories</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {categories.map((category) => (
             <div key={category.title} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
@@ -61,17 +86,34 @@ const Index = () => {
 
       {/* Featured Products Preview */}
       <section className="py-16 px-4 bg-heart-400/10">
-        <h2 className="text-3xl font-bold text-center mb-12">Featured Gifts</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 font-serif">Featured Gifts</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[1, 2, 3].map((item) => (
-            <div key={item} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-heart-100"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Custom Gift Set</h3>
-                <p className="text-gray-600 mb-4">Starting from $29.99</p>
-                <Button variant="outline" className="w-full">View Details</Button>
+          {featuredProducts.map((product) => (
+            <Card key={product.id} className="overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="h-64 overflow-hidden">
+                {product.image ? (
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-heart-100 flex items-center justify-center">
+                    <Gift className="w-12 h-12 text-heart-200" />
+                  </div>
+                )}
               </div>
-            </div>
+              <CardHeader>
+                <CardTitle>{product.name}</CardTitle>
+                <CardDescription>Starting from ₹{product.price}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">{product.description}</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline" className="w-full">View Details</Button>
+              </CardFooter>
+            </Card>
           ))}
         </div>
       </section>
