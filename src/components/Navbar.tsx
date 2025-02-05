@@ -9,7 +9,7 @@ export const Navbar = () => {
     <nav className="bg-white/80 backdrop-blur-md fixed w-full z-50 top-0 left-0 border-b border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3">
-          <span className="self-center text-2xl font-semibold text-gray-900">Heart Junction</span>
+          <span className="self-center text-2xl font-semibold text-gray-900">The Heart Junction</span>
         </a>
         
         <div className="flex md:order-2 space-x-3">
