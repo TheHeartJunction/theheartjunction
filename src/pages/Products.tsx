@@ -1,10 +1,12 @@
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Gift } from "lucide-react";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
+import { Cart, CartItem } from "@/components/Cart";
 
 const products = [
   {
@@ -40,17 +42,30 @@ const products = [
 ];
 
 const Products = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const { toast } = useToast();
+  const [selectedSize, setSelectedSize] = useState<string>("");
+  const [selectedColor, setSelectedColor] = useState<string>("");
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  const handleAddToCart = (product) => {
-    // In a real app, this would integrate with a cart management system
-    console.log('Adding to cart:', product);
-    toast({
-      title: "Added to Cart!",
-      description: `${product.name} has been added to your cart.`,
-      duration: 3000,
-    });
+  const handleAddToCart = (product: any) => {
+    if (!selectedSize || !selectedColor) {
+      toast.error("Please select size and color");
+      return;
+    }
+
+    const newItem: CartItem = {
+      id: Date.now(), // Using timestamp as unique ID
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+      size: selectedSize,
+      color: selectedColor,
+      image: product.image
+    };
+
+    setCartItems([...cartItems, newItem]);
+    toast.success("Added to cart!");
+    setSelectedSize("");
+    setSelectedColor("");
   };
 
   return (
@@ -58,7 +73,10 @@ const Products = () => {
       <Navbar />
       
       <div className="pt-32 px-4 max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8 font-serif">Our Products</h1>
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-4xl font-bold text-gray-900 font-serif">Our Products</h1>
+          <Cart />
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
@@ -99,16 +117,43 @@ const Products = () => {
                             className="w-full h-64 object-cover rounded-lg mb-4"
                           />
                           <p className="text-lg mb-4">{product.details}</p>
-                          <div className="space-y-2">
-                            <p><strong>Price:</strong> ₹{product.price}</p>
-                            <p><strong>Available Sizes:</strong> {product.sizes.join(", ")}</p>
-                            <p><strong>Colors:</strong> {product.colors.join(", ")}</p>
+                          <div className="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                              <label className="text-sm font-medium mb-2 block">Size</label>
+                              <Select onValueChange={setSelectedSize} value={selectedSize}>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select size" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  {product.sizes.map((size) => (
+                                    <SelectItem key={size} value={size}>
+                                      {size}
+                                    </SelectItem>
+                                  ))}
+                                </SelectContent>
+                              </Select>
+                            </div>
+                            <div>
+                              <label className="text-sm font-medium mb-2 block">Color</label>
+                              <Select onValueChange={setSelectedColor} value={selectedColor}>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select color" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  {product.colors.map((color) => (
+                                    <SelectItem key={color} value={color}>
+                                      {color}
+                                    </SelectItem>
+                                  ))}
+                                </SelectContent>
+                              </Select>
+                            </div>
                           </div>
                           <Button 
-                            className="w-full mt-4 bg-heart-200 hover:bg-heart-300"
+                            className="w-full bg-heart-200 hover:bg-heart-300"
                             onClick={() => handleAddToCart(product)}
                           >
-                            Add to Cart
+                            Add to Cart - ₹{product.price}
                           </Button>
                         </div>
                       </DialogDescription>
