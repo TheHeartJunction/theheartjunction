@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { Gift, Heart, PenTool, Package } from "lucide-react";
+import { Gift, Heart, PenTool, Package, ArrowRight, Star } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const categories = [
@@ -50,22 +50,43 @@ const featuredProducts = [
   }
 ];
 
+const testimonials = [
+  {
+    name: "Priya S.",
+    text: "The personalized gift I ordered was absolutely perfect! The attention to detail was amazing.",
+    rating: 5,
+  },
+  {
+    name: "Rahul M.",
+    text: "Their chocolate bouquet made my anniversary celebration extra special. Highly recommended!",
+    rating: 5,
+  },
+  {
+    name: "Anjali K.",
+    text: "Beautiful craftsmanship and excellent customer service. Will definitely order again!",
+    rating: 5,
+  },
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-heart-100 to-white">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 text-center animate-fadeIn">
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-serif">
-          Connecting Hearts, <span className="text-heart-200">With Arts</span>
-        </h1>
-        <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          Discover unique, personalized gifts that speak directly to the heart. Each piece is crafted with love and attention to detail.
-        </p>
-        <Button className="bg-heart-200 hover:bg-heart-300 text-white px-8 py-6 rounded-full text-lg">
-          Start Gifting
-        </Button>
+      <section className="pt-32 pb-16 px-4 text-center animate-fadeIn relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/c3201a07-f9e8-4141-bbe3-cfb46ab164fa.png')] opacity-5 bg-cover bg-center" />
+        <div className="relative">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-serif">
+            Connecting Hearts, <span className="text-heart-200">With Arts</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Discover unique, personalized gifts that speak directly to the heart. Each piece is crafted with love and attention to detail.
+          </p>
+          <Button className="bg-heart-200 hover:bg-heart-300 text-white px-8 py-6 rounded-full text-lg">
+            Explore Our Collection
+          </Button>
+        </div>
       </section>
 
       {/* Categories Section */}
@@ -111,8 +132,32 @@ const Index = () => {
                 <p className="text-gray-600">{product.description}</p>
               </CardContent>
               <CardFooter>
-                <Button variant="outline" className="w-full">View Details</Button>
+                <Button variant="outline" className="w-full" onClick={() => window.location.href = '/products'}>
+                  View Details <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 px-4">
+        <h2 className="text-3xl font-bold text-center mb-12 font-serif">What Our Customers Say</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {testimonials.map((testimonial, index) => (
+            <Card key={index} className="bg-white">
+              <CardHeader>
+                <div className="flex items-center mb-2">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 italic">"{testimonial.text}"</p>
+                <p className="mt-4 font-semibold">{testimonial.name}</p>
+              </CardContent>
             </Card>
           ))}
         </div>
