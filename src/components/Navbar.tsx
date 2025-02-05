@@ -9,6 +9,11 @@ export const Navbar = () => {
     <nav className="bg-white/80 backdrop-blur-md fixed w-full z-50 top-0 left-0 border-b border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3">
+          <img 
+            src="/lovable-uploads/c77061d3-9b60-4e19-abd5-cb48fda9db4f.png" 
+            alt="The Heart Junction Logo" 
+            className="h-12 w-12"
+          />
           <span className="self-center text-2xl font-semibold text-gray-900">The Heart Junction</span>
         </a>
         
