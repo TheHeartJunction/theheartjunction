@@ -56,6 +56,13 @@ const featuredProducts = [
     price: 549,
     description: "Exquisite handcrafted bouquet available in various sizes and colors. Final price varies by selection.",
     image: "/lovable-uploads/b57ca2f9-1346-41ee-b479-f516ccd98369.png"
+  },
+  {
+    id: 5,
+    name: "✨ Majestic Bloom",
+    price: 2999,
+    description: "Our grandest creation featuring 50 stunning handcrafted flowers",
+    image: "/lovable-uploads/371ef153-3a47-4080-b0b3-1d4d34132849.png"
   }
 ];
 
