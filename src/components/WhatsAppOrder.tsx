@@ -5,6 +5,7 @@ import { useState } from "react";
 
 interface WhatsAppOrderProps {
   product: {
+    id: number;
     name: string;
     price: number;
   };
@@ -24,7 +25,7 @@ export const WhatsAppOrder = ({ product }: WhatsAppOrderProps) => {
 Product: ${product.name}
 Size: ${size}
 Color: ${color}${customText ? `\nCustom Text: "${customText}"` : ""}
-Price: ₹${product.price}`;
+Starting Price: ₹${product.price}`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=+919412383635&text=${encodedMessage}`;
@@ -41,9 +42,19 @@ Price: ₹${product.price}`;
               <SelectValue placeholder="Select size" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Small">Small</SelectItem>
-              <SelectItem value="Medium">Medium</SelectItem>
-              <SelectItem value="Large">Large</SelectItem>
+              {product.id === 4 ? (
+                <>
+                  <SelectItem value="7 Flowers">7 Flowers</SelectItem>
+                  <SelectItem value="10 Flowers">10 Flowers</SelectItem>
+                  <SelectItem value="15 Flowers">15 Flowers</SelectItem>
+                </>
+              ) : (
+                <>
+                  <SelectItem value="Small">Small</SelectItem>
+                  <SelectItem value="Medium">Medium</SelectItem>
+                  <SelectItem value="Large">Large</SelectItem>
+                </>
+              )}
             </SelectContent>
           </Select>
         </div>
@@ -54,9 +65,22 @@ Price: ₹${product.price}`;
               <SelectValue placeholder="Select color" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Black">Black</SelectItem>
-              <SelectItem value="White">White</SelectItem>
-              <SelectItem value="Red">Red</SelectItem>
+              {product.id === 4 ? (
+                <>
+                  <SelectItem value="Pink">Pink</SelectItem>
+                  <SelectItem value="White">White</SelectItem>
+                  <SelectItem value="Red">Red</SelectItem>
+                  <SelectItem value="Black">Black</SelectItem>
+                  <SelectItem value="Yellow">Yellow</SelectItem>
+                  <SelectItem value="Blue">Blue</SelectItem>
+                </>
+              ) : (
+                <>
+                  <SelectItem value="Black">Black</SelectItem>
+                  <SelectItem value="White">White</SelectItem>
+                  <SelectItem value="Red">Red</SelectItem>
+                </>
+              )}
             </SelectContent>
           </Select>
         </div>
