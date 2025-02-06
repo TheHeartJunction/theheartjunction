@@ -44,8 +44,8 @@ export const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="/customize" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-heart-200 md:p-0">
-                Customize
+              <a href="/reviews" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-heart-200 md:p-0">
+                Reviews
               </a>
             </li>
             <li>
