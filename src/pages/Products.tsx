@@ -30,6 +30,22 @@ const products = [
     description: "A delightful fusion of luxury and sweetness, customizable with your favorite chocolates",
     image: "/lovable-uploads/c80f2fce-6094-49c0-a7f0-681f3b58a7e1.png",
     details: "Combines premium chocolates with artistic presentation. Can be customized with your choice of chocolates.",
+  },
+  {
+    id: 4,
+    name: "💐 Premium Bouquet",
+    price: 549,
+    description: "Exquisite handcrafted bouquet available in various sizes and colors. Final price varies by selection.",
+    image: "/lovable-uploads/b57ca2f9-1346-41ee-b479-f516ccd98369.png",
+    details: "Our signature premium bouquet, featuring meticulously crafted ribbon flowers in your choice of colors and arrangement sizes.",
+  },
+  {
+    id: 5,
+    name: "✨ Majestic Bloom",
+    price: 2999,
+    description: "Our grandest creation featuring 50 stunning handcrafted flowers",
+    image: "/lovable-uploads/371ef153-3a47-4080-b0b3-1d4d34132849.png",
+    details: "A magnificent arrangement of 50 handcrafted flowers, perfect for making a grand statement at special occasions. Each bloom is carefully crafted to create an unforgettable impression.",
   }
 ];
 

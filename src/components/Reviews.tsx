@@ -1,4 +1,5 @@
 import { Card, CardContent } from "./ui/card";
+import { Navbar } from "./Navbar";
 
 const reviews = [
   {
@@ -29,22 +30,28 @@ const reviews = [
 
 export const Reviews = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
-      {reviews.map((review) => (
-        <Card key={review.id} className="overflow-hidden hover:shadow-lg transition-all">
-          <CardContent className="p-0">
-            <img 
-              src={review.image} 
-              alt={`Event at ${review.event}`}
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="font-semibold text-lg mb-2">{review.event}</h3>
-              <p className="text-gray-600">{review.text}</p>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
+    <div className="min-h-screen bg-gradient-to-b from-heart-100 to-white">
+      <Navbar />
+      <div className="pt-32 px-4 max-w-7xl mx-auto">
+        <h1 className="text-4xl font-bold text-center mb-12 font-serif">The Heart Junction featuring at GL Bajaj</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {reviews.map((review) => (
+            <Card key={review.id} className="overflow-hidden hover:shadow-lg transition-all">
+              <CardContent className="p-0">
+                <img 
+                  src={review.image} 
+                  alt={`Event at ${review.event}`}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">{review.event}</h3>
+                  <p className="text-gray-600">{review.text}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

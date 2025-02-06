@@ -42,17 +42,13 @@ Starting Price: ₹${product.price}`;
               <SelectValue placeholder="Select size" />
             </SelectTrigger>
             <SelectContent>
-              {product.id === 4 ? (
-                <>
-                  <SelectItem value="7 Flowers">7 Flowers</SelectItem>
-                  <SelectItem value="10 Flowers">10 Flowers</SelectItem>
-                  <SelectItem value="15 Flowers">15 Flowers</SelectItem>
-                </>
+              {product.id === 5 ? (
+                <SelectItem value="50 Flowers">50 Flowers</SelectItem>
               ) : (
                 <>
-                  <SelectItem value="Small">Small</SelectItem>
-                  <SelectItem value="Medium">Medium</SelectItem>
-                  <SelectItem value="Large">Large</SelectItem>
+                  <SelectItem value="4 Flowers">4 Flowers</SelectItem>
+                  <SelectItem value="7 Flowers">7 Flowers</SelectItem>
+                  <SelectItem value="10 Flowers">10 Flowers</SelectItem>
                 </>
               )}
             </SelectContent>
@@ -65,22 +61,12 @@ Starting Price: ₹${product.price}`;
               <SelectValue placeholder="Select color" />
             </SelectTrigger>
             <SelectContent>
-              {product.id === 4 ? (
-                <>
-                  <SelectItem value="Pink">Pink</SelectItem>
-                  <SelectItem value="White">White</SelectItem>
-                  <SelectItem value="Red">Red</SelectItem>
-                  <SelectItem value="Black">Black</SelectItem>
-                  <SelectItem value="Yellow">Yellow</SelectItem>
-                  <SelectItem value="Blue">Blue</SelectItem>
-                </>
-              ) : (
-                <>
-                  <SelectItem value="Black">Black</SelectItem>
-                  <SelectItem value="White">White</SelectItem>
-                  <SelectItem value="Red">Red</SelectItem>
-                </>
-              )}
+              <SelectItem value="Pink">Pink</SelectItem>
+              <SelectItem value="White">White</SelectItem>
+              <SelectItem value="Red">Red</SelectItem>
+              <SelectItem value="Black">Black</SelectItem>
+              <SelectItem value="Yellow">Yellow</SelectItem>
+              <SelectItem value="Blue">Blue</SelectItem>
             </SelectContent>
           </Select>
         </div>
