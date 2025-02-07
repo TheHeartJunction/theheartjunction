@@ -15,15 +15,15 @@ import { LoadingScreen } from "./components/LoadingScreen";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading] = useState(false); // Set to false and remove setter since we won't use it
 
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {isLoading && <LoadingScreen onLoadComplete={() => setIsLoading(false)} />}
-        <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+        {isLoading && <LoadingScreen onLoadComplete={() => {}} />}
+        <div className="transition-opacity duration-500">
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
