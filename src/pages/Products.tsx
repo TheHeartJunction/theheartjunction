@@ -14,6 +14,7 @@ const products = [
     description: "A tiny bundle of joy, featuring four delicate handcrafted ribbon flowers",
     image: "/lovable-uploads/22b45637-40e2-4c88-ad58-d838adb92560.png",
     details: "Each Mini Bloom is carefully crafted with premium ribbons, creating a lasting memory that never wilts. Perfect for small gestures of love.",
+    category: "Handcrafted Bouquets"
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const products = [
     description: "Mysterious and elegant black ribbon bouquet, perfect for those who appreciate dark aesthetics",
     image: "/lovable-uploads/c3201a07-f9e8-4141-bbe3-cfb46ab164fa.png",
     details: "A sophisticated arrangement that speaks volumes through its dark elegance. Each ribbon is carefully selected for maximum impact.",
+    category: "Handcrafted Bouquets"
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ const products = [
     description: "A delightful fusion of luxury and sweetness, customizable with your favorite chocolates",
     image: "/lovable-uploads/c80f2fce-6094-49c0-a7f0-681f3b58a7e1.png",
     details: "Combines premium chocolates with artistic presentation. Can be customized with your choice of chocolates.",
+    category: "Handcrafted Bouquets"
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ const products = [
     description: "Exquisite handcrafted bouquet available in various sizes and colors. Final price varies by selection.",
     image: "/lovable-uploads/b57ca2f9-1346-41ee-b479-f516ccd98369.png",
     details: "Our signature premium bouquet, featuring meticulously crafted ribbon flowers in your choice of colors and arrangement sizes.",
+    category: "Handcrafted Bouquets"
   },
   {
     id: 5,
@@ -46,8 +50,30 @@ const products = [
     description: "Our grandest creation featuring 50 stunning handcrafted flowers",
     image: "/lovable-uploads/371ef153-3a47-4080-b0b3-1d4d34132849.png",
     details: "A magnificent arrangement of 50 handcrafted flowers, perfect for making a grand statement at special occasions. Each bloom is carefully crafted to create an unforgettable impression.",
+    category: "Handcrafted Bouquets"
   }
 ];
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": products.map((product, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Product",
+      "name": product.name,
+      "description": product.description,
+      "image": product.image,
+      "offers": {
+        "@type": "Offer",
+        "price": product.price,
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  }))
+};
 
 const Products = () => {
   return (
@@ -56,9 +82,13 @@ const Products = () => {
       
       <div className="pt-32 px-4 max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 font-serif">Our Products</h1>
+          <h1 className="text-4xl font-bold text-gray-900 font-serif">Personalized Gifts & Handcrafted Bouquets</h1>
           <Cart />
         </div>
+        
+        <script type="application/ld+json">
+          {JSON.stringify(productSchema)}
+        </script>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
@@ -67,7 +97,7 @@ const Products = () => {
                 {product.image ? (
                   <img 
                     src={product.image} 
-                    alt={product.name}
+                    alt={`${product.name} - Handcrafted ${product.category} at Heart Junction`}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 ) : (
@@ -95,7 +125,7 @@ const Products = () => {
                         <div className="mt-4">
                           <img 
                             src={product.image} 
-                            alt={product.name}
+                            alt={`${product.name} - Detailed view of handcrafted gift at Heart Junction`}
                             className="w-full h-64 object-cover rounded-lg mb-4"
                           />
                           <p className="text-lg mb-4">{product.details}</p>
