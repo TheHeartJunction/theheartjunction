@@ -32,7 +32,7 @@ export const FeaturedGiftsCarousel = ({ products }: FeaturedGiftsCarouselProps) 
   useEffect(() => {
     if (!autoScrollEnabled) return;
     
-    const interval = setInterval(nextProduct, 5000);
+    const interval = setInterval(nextProduct, 3000); // Changed from 5000 to 3000 for faster transitions
     return () => clearInterval(interval);
   }, [nextProduct, autoScrollEnabled]);
 
