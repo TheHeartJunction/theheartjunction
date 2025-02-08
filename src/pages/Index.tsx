@@ -1,9 +1,11 @@
+
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Gift, Heart, PenTool, Package, ArrowRight, Star } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { WhatsAppOrder } from "@/components/WhatsAppOrder";
+import { FeaturedGiftsCarousel } from "@/components/FeaturedGiftsCarousel";
 
 const categories = [
   {
@@ -122,62 +124,7 @@ const Index = () => {
       </section>
 
       {/* Featured Products Preview */}
-      <section className="py-16 px-4 bg-heart-400/10">
-        <h2 className="text-3xl font-bold text-center mb-12 font-serif">Featured Gifts</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {featuredProducts.map((product) => (
-            <Card key={product.id} className="overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-64 overflow-hidden">
-                {product.image ? (
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-heart-100 flex items-center justify-center">
-                    <Gift className="w-12 h-12 text-heart-200" />
-                  </div>
-                )}
-              </div>
-              <CardHeader>
-                <CardTitle>{product.name}</CardTitle>
-                <CardDescription>
-                  {product.id === 4 ? 'Starting from ' : 'Price: '}₹{product.price}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">{product.description}</p>
-              </CardContent>
-              <CardFooter>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="outline" className="w-full">
-                      Order Now <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl">
-                    <DialogHeader>
-                      <DialogTitle>{product.name}</DialogTitle>
-                      <DialogDescription>
-                        <div className="mt-4">
-                          <img 
-                            src={product.image} 
-                            alt={product.name}
-                            className="w-full h-64 object-cover rounded-lg mb-4"
-                          />
-                          <p className="text-lg mb-4">{product.description}</p>
-                          <WhatsAppOrder product={product} />
-                        </div>
-                      </DialogDescription>
-                    </DialogHeader>
-                  </DialogContent>
-                </Dialog>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-      </section>
+      <FeaturedGiftsCarousel products={featuredProducts} />
 
       {/* Testimonials Section */}
       <section className="py-16 px-4">
