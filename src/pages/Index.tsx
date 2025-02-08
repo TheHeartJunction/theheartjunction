@@ -88,7 +88,7 @@ const testimonials = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-heart-100 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-heart-blush to-white bg-honeycomb bg-opacity-10 bg-fixed bg-center bg-cover">
       <Navbar />
       
       {/* Hero Section */}
@@ -96,25 +96,25 @@ const Index = () => {
         <div className="absolute inset-0 bg-[url('/lovable-uploads/c3201a07-f9e8-4141-bbe3-cfb46ab164fa.png')] opacity-5 bg-cover bg-center" />
         <div className="relative">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-serif">
-            Connecting Hearts, <span className="text-heart-200">With Arts</span>
+            Connecting Hearts, <span className="text-heart-500">With Arts</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Discover unique, personalized gifts that speak directly to the heart. Each piece is crafted with love and attention to detail.
           </p>
-          <Button className="bg-heart-200 hover:bg-heart-300 text-white px-8 py-6 rounded-full text-lg">
+          <Button className="bg-heart-500 hover:bg-heart-600 text-white px-8 py-6 rounded-full text-lg">
             Explore Our Collection
           </Button>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-white/80 backdrop-blur-sm">
         <h2 className="text-3xl font-bold text-center mb-12 font-serif">Our Gift Categories</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {categories.map((category) => (
-            <div key={category.title} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-heart-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <category.icon className="w-6 h-6 text-heart-200" />
+            <div key={category.title} className="bg-heart-blush/50 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-heart-rosegold/20">
+              <div className="w-12 h-12 bg-heart-500/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <category.icon className="w-6 h-6 text-heart-500" />
               </div>
               <h3 className="text-xl font-semibold text-center mb-2">{category.title}</h3>
               <p className="text-gray-600 text-center">{category.description}</p>
@@ -127,15 +127,15 @@ const Index = () => {
       <FeaturedGiftsCarousel products={featuredProducts} />
 
       {/* Testimonials Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-white/80 backdrop-blur-sm">
         <h2 className="text-3xl font-bold text-center mb-12 font-serif">What Our Customers Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-white">
+            <Card key={index} className="bg-heart-blush/50 backdrop-blur-sm border border-heart-rosegold/20">
               <CardHeader>
                 <div className="flex items-center mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="h-5 w-5 fill-heart-500 text-heart-500" />
                   ))}
                 </div>
               </CardHeader>
