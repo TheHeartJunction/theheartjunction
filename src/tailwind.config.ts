@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -57,10 +58,11 @@ export default {
           200: "#FEC6A1",
           300: "#FFDEE2",
           400: "#E5DEFF",
-          500: "#FF748C",
+          500: "#D81B60",
           600: "#FFB6C1",
           rosegold: "#B76E79",
-          blush: "#FFF0F0",
+          blush: "#FCE4EC",
+          gold: "#FFD700",
         },
       },
       borderRadius: {

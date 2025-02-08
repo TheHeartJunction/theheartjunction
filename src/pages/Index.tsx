@@ -96,14 +96,19 @@ const Index = () => {
         <div className="absolute inset-0 bg-[url('/lovable-uploads/c3201a07-f9e8-4141-bbe3-cfb46ab164fa.png')] opacity-5 bg-cover bg-center" />
         <div className="relative">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-serif">
-            Connecting Hearts, <span className="text-heart-500">With Arts</span>
+            THE HEART JUNCTION
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Discover unique, personalized gifts that speak directly to the heart. Each piece is crafted with love and attention to detail.
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-serif">
+            Connecting Hearts, <span className="text-heart-500">With Arts</span>
           </p>
-          <Button className="bg-heart-500 hover:bg-heart-600 text-white px-8 py-6 rounded-full text-lg">
-            Explore Our Collection
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button className="bg-heart-500 hover:bg-opacity-90 text-white px-8 py-6 rounded-full text-lg">
+              Shop Now
+            </Button>
+            <Button variant="outline" className="border-heart-gold hover:bg-heart-gold/10 px-8 py-6 rounded-full text-lg">
+              Custom Orders
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -114,7 +119,7 @@ const Index = () => {
           {categories.map((category) => (
             <div key={category.title} className="bg-heart-blush/50 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-heart-rosegold/20">
               <div className="w-12 h-12 bg-heart-500/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <category.icon className="w-6 h-6 text-heart-500" />
+                <category.icon className="w-6 h-6 text-heart-500 transition-colors hover:text-heart-gold" />
               </div>
               <h3 className="text-xl font-semibold text-center mb-2">{category.title}</h3>
               <p className="text-gray-600 text-center">{category.description}</p>
@@ -135,7 +140,7 @@ const Index = () => {
               <CardHeader>
                 <div className="flex items-center mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-heart-500 text-heart-500" />
+                    <Star key={i} className="h-5 w-5 fill-heart-gold text-heart-gold" />
                   ))}
                 </div>
               </CardHeader>
