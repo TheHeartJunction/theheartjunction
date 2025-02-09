@@ -126,11 +126,11 @@ const Index = () => {
             </p>
             <div className="flex justify-center items-center mt-8">
               <Button 
-                variant="outline" 
-                className="border-heart-gold hover:bg-heart-gold/10 px-8 py-6 rounded-full text-lg transition-all duration-300"
                 onClick={() => navigate('/products')}
+                className="bg-heart-500 hover:bg-heart-500/90 text-white px-8 py-6 rounded-full text-lg transition-all duration-300 hover:scale-105"
               >
                 View Collection
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
             <motion.div
