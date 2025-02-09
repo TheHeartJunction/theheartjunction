@@ -6,27 +6,32 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { WhatsAppOrder } from "@/components/WhatsAppOrder";
 import { FeaturedGiftsCarousel } from "@/components/FeaturedGiftsCarousel";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   {
     title: "Personalized Gifts",
     icon: Gift,
     description: "Unique gifts tailored just for them",
+    bgColor: "bg-heart-300/50", // Soft Pink
   },
   {
     title: "Handcrafted Bouquets",
     icon: Heart,
     description: "Beautiful arrangements made with love",
+    bgColor: "bg-heart-100/50", // Soft Peach
   },
   {
     title: "Love Letters",
     icon: PenTool,
     description: "Heartfelt messages penned by hand",
+    bgColor: "bg-heart-400/50", // Soft Purple
   },
   {
     title: "Custom Hampers",
     icon: Package,
     description: "Curated collections of joy",
+    bgColor: "bg-heart-600/50", // Light Pink
   },
 ];
 
@@ -87,6 +92,8 @@ const testimonials = [
 ];
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-heart-blush to-white bg-honeycomb bg-opacity-10 bg-fixed bg-center bg-cover">
       <Navbar />
@@ -117,21 +124,11 @@ const Index = () => {
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mt-6 font-serif">
               Surprise your loved ones with customized gifts made just for them
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-              <Button 
-                className="bg-heart-500 hover:bg-opacity-90 text-white px-8 py-6 rounded-full text-lg group transition-all duration-300 hover:shadow-lg hover:shadow-heart-500/20"
-              >
-                Customize Your Gift
-                <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <ArrowRight className="ml-2" />
-                </motion.span>
-              </Button>
+            <div className="flex justify-center items-center mt-8">
               <Button 
                 variant="outline" 
                 className="border-heart-gold hover:bg-heart-gold/10 px-8 py-6 rounded-full text-lg transition-all duration-300"
+                onClick={() => navigate('/products')}
               >
                 View Collection
               </Button>
@@ -156,7 +153,10 @@ const Index = () => {
         <h2 className="text-3xl font-bold text-center mb-12 font-serif">Our Gift Categories</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {categories.map((category) => (
-            <div key={category.title} className="bg-heart-blush/50 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-heart-rosegold/20">
+            <div 
+              key={category.title} 
+              className={`${category.bgColor} backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-heart-rosegold/20`}
+            >
               <div className="w-12 h-12 bg-heart-500/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <category.icon className="w-6 h-6 text-heart-500 transition-colors hover:text-heart-gold" />
               </div>
