@@ -28,8 +28,6 @@ import { Reviews } from "./components/Reviews";
 
 const queryClient = new QueryClient();
 
-const App = () => {
-  return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
@@ -50,4 +48,3 @@ const App = () => {
   );
 };
 
-export default App;
