@@ -1,3 +1,22 @@
+// tailwind.config.ts
+import { type Config } from "tailwindcss";
+
+const config: Config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#E91E63", // Deep Pink (CTA & Highlights)
+        secondary: "#FFC107", // Soft Gold (Accents)
+        background: "#FFF8F0", // Warm Cream (Background)
+        textPrimary: "#4A4A4A", // Dark Gray (Headings)
+        textSecondary: "#7D7D7D", // Soft Gray (Body Text)
+      },
+    },
+  },
+};
+
+export default config;
+
 import type { Config } from "tailwindcss";
 
 export default {
