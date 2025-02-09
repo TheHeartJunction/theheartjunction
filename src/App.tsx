@@ -45,6 +45,5 @@ const queryClient = new QueryClient();
         </div>
       </TooltipProvider>
     </QueryClientProvider>
-  );
 };
 
