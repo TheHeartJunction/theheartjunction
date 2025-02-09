@@ -1,3 +1,19 @@
+import ThreeDGiftBox from "@/components/ThreeDGiftBox"; // Import the 3D Gift Box
+
+function App() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <h1 className="text-4xl font-bold mb-6">Welcome to Heart Junction</h1>
+
+      {/* Add the 3D Gift Box */}
+      <div className="w-[400px] h-[400px]">
+        <ThreeDGiftBox />
+      </div>
+    </div>
+  );
+}
+
+export default App;
 
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
