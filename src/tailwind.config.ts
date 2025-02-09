@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -53,15 +54,15 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         heart: {
-          100: "#FDE1D3",
+          100: "#FDE1D3", // Soft Peach
           200: "#FEC6A1",
-          300: "#FFDEE2",
-          400: "#E5DEFF",
-          500: "#D81B60",
-          600: "#FFB6C1",
+          300: "#FFDEE2", // Soft Pink
+          400: "#E5DEFF", // Soft Purple
+          500: "#D81B60", // Deep Pink (CTA)
+          600: "#FFB6C1", // Light Pink
           rosegold: "#B76E79",
-          blush: "#FCE4EC",
-          gold: "#FFD700",
+          blush: "#FCE4EC", // Primary Background
+          gold: "#FFD700", // Accent Gold
         },
       },
       borderRadius: {
