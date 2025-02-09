@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Gift, Heart, PenTool, Package, ArrowRight, Star } from "lucide-react";
@@ -6,6 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { WhatsAppOrder } from "@/components/WhatsAppOrder";
 import { FeaturedGiftsCarousel } from "@/components/FeaturedGiftsCarousel";
+import { motion } from "framer-motion";
 
 const categories = [
   {
@@ -92,24 +92,63 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 text-center animate-fadeIn relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/c3201a07-f9e8-4141-bbe3-cfb46ab164fa.png')] opacity-5 bg-cover bg-center" />
-        <div className="relative">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-serif">
-            THE HEART JUNCTION
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-serif">
-            Connecting Hearts, <span className="text-heart-500">With Arts</span>
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button className="bg-heart-500 hover:bg-opacity-90 text-white px-8 py-6 rounded-full text-lg">
-              Shop Now
-            </Button>
-            <Button variant="outline" className="border-heart-gold hover:bg-heart-gold/10 px-8 py-6 rounded-full text-lg">
-              Custom Orders
-            </Button>
-          </div>
+      <section className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-heart-blush via-white to-heart-blush opacity-90" />
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/371ef153-3a47-4080-b0b3-1d4d34132849.png')] bg-cover bg-center opacity-10 blur-sm" />
+        <div className="relative z-10 max-w-6xl mx-auto text-center px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="inline-block mb-6"
+            >
+              <Heart className="w-12 h-12 text-heart-500 fill-heart-500/20" />
+            </motion.div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 font-serif leading-tight">
+              Your Feelings, Our Art –
+              <br />
+              <span className="text-heart-500">Make Every Gift Special</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mt-6 font-serif">
+              Surprise your loved ones with customized gifts made just for them
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+              <Button 
+                className="bg-heart-500 hover:bg-opacity-90 text-white px-8 py-6 rounded-full text-lg group transition-all duration-300 hover:shadow-lg hover:shadow-heart-500/20"
+              >
+                Customize Your Gift
+                <motion.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <ArrowRight className="ml-2" />
+                </motion.span>
+              </Button>
+              <Button 
+                variant="outline" 
+                className="border-heart-gold hover:bg-heart-gold/10 px-8 py-6 rounded-full text-lg transition-all duration-300"
+              >
+                View Collection
+              </Button>
+            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="mt-12"
+            >
+              <p className="italic text-gray-600 text-sm md:text-base">
+                ❝ A gift that speaks from the heart lasts forever ❞
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Categories Section */}
