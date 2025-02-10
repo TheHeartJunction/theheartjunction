@@ -60,7 +60,7 @@ export const Navbar = () => {
 
           {/* WhatsApp Button */}
           <motion.a
-            href="https://wa.me/+919876543210"
+            href="https://wa.me/+919412383635"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
