@@ -1,10 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { Gift, Heart, PenTool, Package, ArrowRight, Star } from "lucide-react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { WhatsAppOrder } from "@/components/WhatsAppOrder";
+import { Gift, Heart, PenTool, Package, ArrowRight } from "lucide-react";
 import { FeaturedGiftsCarousel } from "@/components/FeaturedGiftsCarousel";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -171,26 +169,7 @@ const Index = () => {
       <FeaturedGiftsCarousel products={featuredProducts} />
 
       {/* Testimonials Section */}
-      <section className="py-16 px-4 bg-white/80 backdrop-blur-sm">
-        <h2 className="text-3xl font-bold text-center mb-12 font-serif">What Our Customers Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-heart-blush/50 backdrop-blur-sm border border-heart-rosegold/20">
-              <CardHeader>
-                <div className="flex items-center mb-2">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-heart-gold text-heart-gold" />
-                  ))}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 italic">"{testimonial.text}"</p>
-                <p className="mt-4 font-semibold">{testimonial.name}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+      <TestimonialsSection />
     </div>
   );
 };
