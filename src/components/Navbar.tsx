@@ -1,9 +1,14 @@
-import { ShoppingCart, Menu } from "lucide-react";
+
+import { ShoppingCart, Menu, LogIn, LogOut } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <nav className="bg-white/80 backdrop-blur-md fixed w-full z-50 top-0 left-0 border-b border-gray-200">
@@ -21,6 +26,15 @@ export const Navbar = () => {
           <Button variant="ghost" size="icon">
             <ShoppingCart className="h-5 w-5" />
           </Button>
+          {user ? (
+            <Button variant="ghost" size="icon" onClick={() => signOut()}>
+              <LogOut className="h-5 w-5" />
+            </Button>
+          ) : (
+            <Button variant="ghost" size="icon" onClick={() => navigate("/auth")}>
+              <LogIn className="h-5 w-5" />
+            </Button>
+          )}
           <Button
             variant="ghost"
             size="icon"
