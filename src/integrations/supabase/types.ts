@@ -9,6 +9,39 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      instagram_posts: {
+        Row: {
+          caption: string | null
+          created_at: string
+          id: string
+          media_type: string
+          media_url: string
+          permalink: string
+          thumbnail_url: string | null
+          timestamp: string
+        }
+        Insert: {
+          caption?: string | null
+          created_at?: string
+          id: string
+          media_type: string
+          media_url: string
+          permalink: string
+          thumbnail_url?: string | null
+          timestamp: string
+        }
+        Update: {
+          caption?: string | null
+          created_at?: string
+          id?: string
+          media_type?: string
+          media_url?: string
+          permalink?: string
+          thumbnail_url?: string | null
+          timestamp?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
