@@ -12,9 +12,10 @@ interface Product {
   description: string;
   image: string;
 }
-
-<FeaturedGiftsCarousel products={featuredProducts} />
+interface FeaturedGiftsCarouselProps {
+  products: Product[];
 }
+<FeaturedGiftsCarousel products={featuredProducts} />
 
 export const FeaturedGiftsCarousel = ({ products = [] }: FeaturedGiftsCarouselProps) => {
   const [index, setIndex] = useState(0);
