@@ -16,7 +16,14 @@ const FeaturedGiftsCarouselProps;
 interface FeaturedGiftsCarouselProps {
   products: Product[];
 }
-<FeaturedGiftsCarousel products={featuredProducts} />
+//<FeaturedGiftsCarousel products={featuredProducts} />
+const MyComponent = () => {
+  return (
+    <div>
+      {featuredProducts({ products: myProducts })}
+    </div>
+  );
+};
 
 export const FeaturedGiftsCarousel = ({ products = [] }: FeaturedGiftsCarouselProps) => {
   const [index, setIndex] = useState(0);
