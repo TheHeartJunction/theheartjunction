@@ -34,7 +34,7 @@ const categories = [
 ];
 
 // Updated products array based on your conversation
-const updatedProducts = [
+const Products = [
   {
     id: 1,
     name: "Crimson",
