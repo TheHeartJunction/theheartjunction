@@ -12,6 +12,9 @@ interface Product {
   description: string;
   image: string;
 }
+
+const FeaturedGiftsCarouselProps 
+
 interface FeaturedGiftsCarouselProps {
   products: Product[];
 }
