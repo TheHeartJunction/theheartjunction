@@ -13,8 +13,7 @@ interface Product {
   image: string;
 }
 
-interface FeaturedGiftsCarouselProps {
-  products: Product[];
+<FeaturedGiftsCarousel products={featuredProducts} />
 }
 
 export const FeaturedGiftsCarousel = ({ products = [] }: FeaturedGiftsCarouselProps) => {
