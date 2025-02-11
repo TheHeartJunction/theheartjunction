@@ -11,51 +11,51 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const products = [
-  {
-    id: 1,
-    name: "Mini Bloom",
-    price: 350,
-    description: "A tiny bundle of joy, featuring four delicate handcrafted ribbon flowers",
-    image: "/lovable-uploads/22b45637-40e2-4c88-ad58-d838adb92560.png",
-    details: "Each Mini Bloom is carefully crafted with premium ribbons, creating a lasting memory that never wilts. Perfect for small gestures of love.",
-    category: "Handcrafted Bouquets"
-  },
-  {
-    id: 2,
-    name: "🖤 Midnight Whispers",
-    price: 549,
-    description: "Mysterious and elegant black ribbon bouquet, perfect for those who appreciate dark aesthetics",
-    image: "/lovable-uploads/c3201a07-f9e8-4141-bbe3-cfb46ab164fa.png",
-    details: "A sophisticated arrangement that speaks volumes through its dark elegance. Each ribbon is carefully selected for maximum impact.",
-    category: "Handcrafted Bouquets"
-  },
-  {
-    id: 3,
-    name: "🍫 Choco Bliss Bouquet",
-    price: 250,
-    description: "A delightful fusion of luxury and sweetness, customizable with your favorite chocolates",
-    image: "/lovable-uploads/c80f2fce-6094-49c0-a7f0-681f3b58a7e1.png",
-    details: "Combines premium chocolates with artistic presentation. Can be customized with your choice of chocolates.",
-    category: "Handcrafted Bouquets"
-  },
-  {
-    id: 4,
-    name: "💐 Premium Bouquet",
-    price: 549,
-    description: "Exquisite handcrafted bouquet available in various sizes and colors. Final price varies by selection.",
-    image: "/lovable-uploads/b57ca2f9-1346-41ee-b479-f516ccd98369.png",
-    details: "Our signature premium bouquet, featuring meticulously crafted ribbon flowers in your choice of colors and arrangement sizes.",
-    category: "Handcrafted Bouquets"
-  },
-  {
-    id: 5,
-    name: "✨ Majestic Bloom",
-    price: 2999,
-    description: "Our grandest creation featuring 50 stunning handcrafted flowers",
-    image: "/lovable-uploads/371ef153-3a47-4080-b0b3-1d4d34132849.png",
-    details: "A magnificent arrangement of 50 handcrafted flowers, perfect for making a grand statement at special occasions. Each bloom is carefully crafted to create an unforgettable impression.",
-    category: "Handcrafted Bouquets"
-  }
+    {
+        id: 1,
+        name: "Crimson",
+        price: 499,
+        description: "A luxurious handcrafted bouquet featuring deep red satin roses, wrapped in a pristine white paper with a soft ribbon for an elegant finish.",
+        image: "/uploads/crimson.png", // Update this with the correct path if needed
+        details: "Designed for romantic gestures, this bouquet is a timeless way to express love and admiration. Available in multiple variants.",
+        category: "Handcrafted Bouquets"
+    },
+    {
+        id: 2,
+        name: "Truffle",
+        price: 199,
+        description: "A unique chocolate bouquet featuring a delightful assortment of premium chocolates, elegantly wrapped with soft fabric and a purple ribbon.",
+        image: "/uploads/truffle.png", // Update this with the correct path if needed
+        details: "Perfect for chocolate lovers, this bouquet is a sweet surprise for birthdays, anniversaries, and celebrations.",
+        category: "Chocolate Bouquets"
+    },
+    {
+        id: 3,
+        name: "Glowfly",
+        price: 439,
+        description: "A mesmerizing bouquet featuring glowing butterflies and an enchanting LED setup, wrapped in premium soft-touch paper.",
+        image: "/uploads/glowfly.png", // Update this with the correct path if needed
+        details: "A perfect blend of light and elegance, ideal for romantic surprises, birthdays, and unique gifts.",
+        category: "Handcrafted Bouquets"
+    },
+    {
+        id: 4,
+        name: "Golden Bliss",
+        price: 2889,
+        description: "A luxurious bouquet featuring 50 handcrafted roses in golden, yellow, and white hues, elegantly wrapped in premium paper for a sophisticated touch.",
+        image: "/uploads/golden_bliss.png", // Update this with the correct path if needed
+        details: "This luxe edition bouquet is perfect for grand gestures, anniversaries, and celebrations. Designed to leave a lasting impression.",
+        category: "Handcrafted Bouquets"
+    },
+    {
+        id: 5,
+        name: "Cupid’s Message",
+        price: 189,
+        description: "A beautifully handcrafted explosion card filled with sweet messages, cute elements, and space for personal notes. Wrapped with a delicate pink ribbon for an adorable finish.",
+        image: "/uploads/cupids_message.png", // Update this with the correct path if needed
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "Handmade Cards"
+    }
 ];
 
 type Category = "All" | "Personalized Gifts" | "Handcrafted Bouquets" | "Love Letters" | "Custom Hampers";
