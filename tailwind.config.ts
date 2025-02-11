@@ -7,7 +7,7 @@ const config: Config = {
       colors: {
         primary: "#E91E63", // Deep Pink (CTA & Highlights)
         secondary: "#FFC107", // Soft Gold (Accents)
-        background: "#FFF8F0", // Warm Cream (Background)
+        background: "#FFFFFF", // Change to pure white
         textPrimary: "#4A4A4A", // Dark Gray (Headings)
         textSecondary: "#7D7D7D", // Soft Gray (Body Text)
       },
