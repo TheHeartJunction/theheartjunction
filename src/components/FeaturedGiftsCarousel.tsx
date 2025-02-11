@@ -17,9 +17,14 @@ interface FeaturedGiftsCarouselProps {
   products: Product[];
 }
 
-export const FeaturedGiftsCarousel = ({ products }: FeaturedGiftsCarouselProps) => {
+export const FeaturedGiftsCarousel = ({ products = [] }: FeaturedGiftsCarouselProps) => {
   const [index, setIndex] = useState(0);
   const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
+
+  // ✅ Prevent crash when products is empty
+  if (!products || products.length === 0) {
+    return <p className="text-center">No featured products available</p>;
+  }
 
   const nextProduct = useCallback(() => {
     setIndex((prev) => (prev + 1) % products.length);
