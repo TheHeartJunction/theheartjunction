@@ -1,25 +1,6 @@
-// tailwind.config.ts
-import { type Config } from "tailwindcss";
-
-const config: Config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: "#E91E63", // Deep Pink (CTA & Highlights)
-        secondary: "#FFC107", // Soft Gold (Accents)
-        background: "#FFFFFF", // Change to pure white
-        textPrimary: "#4A4A4A", // Dark Gray (Headings)
-        textSecondary: "#7D7D7D", // Soft Gray (Body Text)
-      },
-    },
-  },
-};
-
-export default config;
-
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -27,7 +8,6 @@ export default {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
-  prefix: "",
   theme: {
     container: {
       center: true,
@@ -38,11 +18,17 @@ export default {
     },
     extend: {
       colors: {
+        primary: "#E91E63", // Deep Pink (CTA & Highlights)
+        secondary: "#FFC107", // Soft Gold (Accents)
+        background: "#FFFFFF", // Changed to pure white
+        textPrimary: "#4A4A4A", // Dark Gray (Headings)
+        textSecondary: "#7D7D7D", // Soft Gray (Body Text)
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -98,25 +84,25 @@ export default {
         },
         "thread-left": {
           "0%": { transform: "scaleY(0) translateX(20px)", opacity: "0" },
-          "100%": { transform: "scaleY(1) translateX(0)", opacity: "1" }
+          "100%": { transform: "scaleY(1) translateX(0)", opacity: "1" },
         },
         "thread-right": {
           "0%": { transform: "scaleY(0) translateX(-20px)", opacity: "0" },
-          "100%": { transform: "scaleY(1) translateX(0)", opacity: "1" }
+          "100%": { transform: "scaleY(1) translateX(0)", opacity: "1" },
         },
         "heart-appear": {
           "0%": { transform: "scale(0)", opacity: "0" },
           "50%": { transform: "scale(0)", opacity: "0" },
-          "100%": { transform: "scale(1)", opacity: "1" }
+          "100%": { transform: "scale(1)", opacity: "1" },
         },
         "heart-pulse": {
           "0%, 100%": { transform: "scale(1)" },
-          "50%": { transform: "scale(1.1)" }
+          "50%": { transform: "scale(1.1)" },
         },
         glow: {
           "0%, 100%": { opacity: "0.3" },
-          "50%": { opacity: "0.6" }
-        }
+          "50%": { opacity: "0.6" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -126,9 +112,11 @@ export default {
         "thread-right": "thread-right 1s ease-out forwards",
         "heart-appear": "heart-appear 2s ease-out forwards",
         "heart-pulse": "heart-pulse 2s ease-in-out infinite",
-        "glow": "glow 2s ease-in-out infinite"
+        glow: "glow 2s ease-in-out infinite",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
+export default config;
