@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-
+src/pages/Products.tsx
+import { product } from "@/src/pages/Products.tsx";
 interface Product {
   id: number;
   name: string;
