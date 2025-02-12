@@ -4,6 +4,32 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { Button } from "@/components/ui/button";
 import { Gift, Heart, PenTool, Package, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+const categories = [
+  {
+    title: "Personalized Gifts",
+    icon: Gift,
+    description: "Unique gifts tailored just for them",
+    bgColor: "bg-heart-300/50", // Soft Pink
+  },
+  {
+    title: "Handcrafted Bouquets",
+    icon: Heart,
+    description: "Beautiful arrangements made with love",
+    bgColor: "bg-heart-100/50", // Soft Peach
+  },
+  {
+    title: "Love Letters",
+    icon: PenTool,
+    description: "Heartfelt messages penned by hand",
+    bgColor: "bg-heart-400/50", // Soft Purple
+  },
+  {
+    title: "Custom Hampers",
+    icon: Package,
+    description: "Curated collections of joy",
+    bgColor: "bg-heart-600/50", // Light Pink
+  },
+];
 
 const featuredProducts = [
   {
@@ -38,7 +64,7 @@ const featuredProducts = [
     name: "Golden Bliss",
     price: 2889,
     description: "A luxurious bouquet featuring 50 handcrafted roses in golden, yellow, and white hues, elegantly wrapped in premium paper for a sophisticated touch.",
-    image: "/uploads/golden_bliss.png",
+    image: "/uploads/golden bliss.png",
     details: "This luxe edition bouquet is perfect for grand gestures, anniversaries, and celebrations. Designed to leave a lasting impression.",
     category: "Handcrafted Bouquets",
   },
@@ -47,38 +73,12 @@ const featuredProducts = [
     name: "Cupid’s Message",
     price: 189,
     description: "A beautifully handcrafted explosion card filled with sweet messages, cute elements, and space for personal notes. Wrapped with a delicate pink ribbon for an adorable finish.",
-    image: "/uploads/cupids_message.png",
+    image: "/uploads/cupid's message.png",
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "Handmade Cards",
   },
 ];
 
-const categories = [
-  {
-    title: "Personalized Gifts",
-    icon: Gift,
-    description: "Unique gifts tailored just for them",
-    bgColor: "bg-heart-300/50", // Soft Pink
-  },
-  {
-    title: "Handcrafted Bouquets",
-    icon: Heart,
-    description: "Beautiful arrangements made with love",
-    bgColor: "bg-heart-100/50", // Soft Peach
-  },
-  {
-    title: "Love Letters",
-    icon: PenTool,
-    description: "Heartfelt messages penned by hand",
-    bgColor: "bg-heart-400/50", // Soft Purple
-  },
-  {
-    title: "Custom Hampers",
-    icon: Package,
-    description: "Curated collections of joy",
-    bgColor: "bg-heart-600/50", // Light Pink
-  },
-];
 
 const Index = () => {
   const navigate = useNavigate();
