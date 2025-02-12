@@ -61,7 +61,7 @@ const products: Product[] = [
   },
   {
     id: 5,
-    name: "Cupid’s Message",
+    name: "Cupid's Message",
     price: 189,
     description: "A beautifully handcrafted explosion card filled with sweet messages, cute elements, and space for personal notes. Wrapped with a delicate pink ribbon for an adorable finish.",
     image: "/uploads/cupid's message.png", // Update this with the correct path if needed
@@ -91,7 +91,7 @@ const products: Product[] = [
     name: "Lavender Luxe",
     price: 539,
     description: "A beautifully premium 7 flower bouquet with lavender theme.",
-    image: "/uploads/Lavender Luxe.png", // Update this with the correct path if needed
+    image: "/public/uploads/Lavender Luxe.png", // Update this with the correct path if needed
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "Bouquet"
   },
@@ -100,7 +100,7 @@ const products: Product[] = [
     name: "Blossom",
     price: 499,
     description: "A beautifully handcrafted 7 flower bouquet with red and white theme.",
-    image: "/uploads/Blossom.png", // Update this with the correct path if needed
+    image: "/public/uploads/Blossom.png", // Update this with the correct path if needed
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "Bouquet"
   },
@@ -109,7 +109,7 @@ const products: Product[] = [
     name: "LoveBundle",
     price: 599,
     description: "A beautifully handcrafted 7 flower bouquet with Cupid's card.",
-    image: "/uploads/LoveBundle.png", // Update this with the correct path if needed
+    image: "/public/uploads/LoveBundle.png", // Update this with the correct path if needed
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "COMBO"
   }
@@ -178,7 +178,7 @@ export const FeaturedGiftsCarousel = ({ products = [] }: FeaturedGiftsCarouselPr
       <h2 className="text-3xl font-bold text-center mb-12 font-serif">Featured Gifts</h2>
       
       <div className="relative max-w-7xl mx-auto">
-        <div className="relative w-full h-[500px] overflow-hidden">
+        <div className="relative w-full overflow-hidden">
           <motion.div
             key={products[index].id}
             className="absolute inset-0 flex items-center justify-center"
@@ -191,12 +191,12 @@ export const FeaturedGiftsCarousel = ({ products = [] }: FeaturedGiftsCarouselPr
             dragElastic={1}
             onDragEnd={handleDragEnd}
           >
-            <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-md w-full">
-              <div className="relative h-64">
+            <div className="bg-white rounded-lg shadow-xl overflow-hidden w-full max-w-lg">
+              <div className="aspect-square overflow-hidden">
                 <motion.img
                   src={products[index].image}
                   alt={products[index].name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
