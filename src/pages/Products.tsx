@@ -6,8 +6,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Gift, SlidersHorizontal } from "lucide-react";
 import { WhatsAppOrder } from "@/components/WhatsAppOrder";
 import { Cart } from "@/components/Cart";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const products = [
     {
@@ -108,6 +109,7 @@ type SortOption = "price-asc" | "price-desc" | "name-asc" | "name-desc";
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category>("All");
   const [sortBy, setSortBy] = useState<SortOption>("price-asc");
+  const [isLoading, setIsLoading] = useState(true);
 
   const filteredProducts = products.filter(product => 
     selectedCategory === "All" || product.category === selectedCategory
@@ -127,6 +129,22 @@ const Products = () => {
         return 0;
     }
   });
+
+  useEffect(() => {
+    // Preload images
+    Promise.all(
+      products.map((product) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = product.image;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      })
+    ).then(() => {
+      setIsLoading(false);
+    });
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-heart-100 to-white">
@@ -172,71 +190,74 @@ const Products = () => {
           </div>
         </div>
         
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {sortedProducts.map((product) => (
-            <motion.div
-              key={product.id}
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Card className="overflow-hidden hover:shadow-xl transition-shadow bg-white/80 backdrop-blur-sm border-heart-rosegold/20">
-                <div className="aspect-square overflow-hidden">
-                  {product.image ? (
-                    <img 
+        {isLoading ? (
+          <div className="flex items-center justify-center min-h-[60vh]">
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-heart-500"></div>
+          </div>
+        ) : (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {sortedProducts.map((product) => (
+              <motion.div
+                key={product.id}
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Card className="overflow-hidden hover:shadow-xl transition-shadow bg-white/80 backdrop-blur-sm border-heart-rosegold/20">
+                  <div className="aspect-square overflow-hidden">
+                    <Image 
                       src={product.image} 
                       alt={product.name}
+                      width={500}
+                      height={500}
+                      loading="lazy"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
-                  ) : (
-                    <div className="w-full h-full bg-heart-100 flex items-center justify-center">
-                      <Gift className="w-12 h-12 text-heart-200" />
-                    </div>
-                  )}
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl font-serif">{product.name}</CardTitle>
-                  <CardDescription>Starting from ₹{product.price}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{product.description}</p>
-                </CardContent>
-                <CardFooter className="flex gap-4">
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button className="flex-1 hover:bg-heart-500/10" variant="secondary">View Details</Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-                      <DialogHeader>
-                        <DialogTitle className="text-2xl font-serif">{product.name}</DialogTitle>
-                        <DialogDescription>
-                          <div className="mt-4 space-y-4">
-                            <div className="aspect-square w-full max-w-md mx-auto overflow-hidden rounded-lg">
-                              <img 
-                                src={product.image} 
-                                alt={product.name}
-                                className="w-full h-full object-cover"
-                              />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-serif">{product.name}</CardTitle>
+                    <CardDescription>Starting from ₹{product.price}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">{product.description}</p>
+                  </CardContent>
+                  <CardFooter className="flex gap-4">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button className="flex-1 hover:bg-heart-500/10" variant="secondary">View Details</Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl font-serif">{product.name}</DialogTitle>
+                          <DialogDescription>
+                            <div className="mt-4 space-y-4">
+                              <div className="aspect-square w-full max-w-md mx-auto overflow-hidden rounded-lg">
+                                <img 
+                                  src={product.image} 
+                                  alt={product.name}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                              <p className="text-lg">{product.details}</p>
+                              <div className="sticky bottom-0 bg-background/95 backdrop-blur py-4">
+                                <WhatsAppOrder product={product} />
+                              </div>
                             </div>
-                            <p className="text-lg">{product.details}</p>
-                            <div className="sticky bottom-0 bg-background/95 backdrop-blur py-4">
-                              <WhatsAppOrder product={product} />
-                            </div>
-                          </div>
-                        </DialogDescription>
-                      </DialogHeader>
-                    </DialogContent>
-                  </Dialog>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+                          </DialogDescription>
+                        </DialogHeader>
+                      </DialogContent>
+                    </Dialog>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </div>
   );
