@@ -2,35 +2,9 @@ import { Navbar } from "@/components/Navbar";
 import { FeaturedGiftsCarousel } from "@/components/FeaturedGiftsCarousel";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Gift, Heart, PenTool, Package, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const categories = [
-  {
-    title: "Personalized Gifts",
-    icon: Gift,
-    description: "Unique gifts tailored just for them",
-    bgColor: "bg-heart-300/50", // Soft Pink
-  },
-  {
-    title: "Handcrafted Bouquets",
-    icon: Heart,
-    description: "Beautiful arrangements made with love",
-    bgColor: "bg-heart-100/50", // Soft Peach
-  },
-  {
-    title: "Love Letters",
-    icon: PenTool,
-    description: "Heartfelt messages penned by hand",
-    bgColor: "bg-heart-400/50", // Soft Purple
-  },
-  {
-    title: "Custom Hampers",
-    icon: Package,
-    description: "Curated collections of joy",
-    bgColor: "bg-heart-600/50", // Light Pink
-  },
-];
 const featuredProducts = [
   {
     id: 1,
@@ -79,6 +53,33 @@ const featuredProducts = [
   },
 ];
 
+const categories = [
+  {
+    title: "Personalized Gifts",
+    icon: Gift,
+    description: "Unique gifts tailored just for them",
+    bgColor: "bg-heart-300/50", // Soft Pink
+  },
+  {
+    title: "Handcrafted Bouquets",
+    icon: Heart,
+    description: "Beautiful arrangements made with love",
+    bgColor: "bg-heart-100/50", // Soft Peach
+  },
+  {
+    title: "Love Letters",
+    icon: PenTool,
+    description: "Heartfelt messages penned by hand",
+    bgColor: "bg-heart-400/50", // Soft Purple
+  },
+  {
+    title: "Custom Hampers",
+    icon: Package,
+    description: "Curated collections of joy",
+    bgColor: "bg-heart-600/50", // Light Pink
+  },
+];
+
 const Index = () => {
   const navigate = useNavigate();
 
@@ -89,6 +90,20 @@ const Index = () => {
       
       {/* Featured Products Preview */}
       <FeaturedGiftsCarousel products={featuredProducts} />
+
+      {/* Categories Section */}
+      <div className="py-16">
+        <h2 className="text-3xl font-bold text-center mb-12 font-serif">Categories</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {categories.map((category, index) => (
+            <div key={index} className={`p-6 rounded-lg shadow-lg ${category.bgColor}`}>
+              <category.icon className="w-12 h-12 text-heart-500 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">{category.title}</h3>
+              <p className="text-gray-600">{category.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Testimonials Section */}
       <TestimonialsSection />
