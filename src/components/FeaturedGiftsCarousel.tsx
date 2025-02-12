@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from 'framer-motion';
+import Image from "next/image";
 
 interface Product {
   id: number;
@@ -193,9 +194,12 @@ export const FeaturedGiftsCarousel = ({ products = [] }: FeaturedGiftsCarouselPr
           >
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
-                <motion.img
+                <Image
                   src={products[index].image}
                   alt={products[index].name}
+                  width={500}
+                  height={500}
+                  priority={true}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
