@@ -15,7 +15,7 @@ const products = [
         name: "Crimson",
         price: 499,
         description: "A luxurious handcrafted bouquet featuring deep red satin roses, wrapped in a pristine white paper with a soft ribbon for an elegant finish.",
-        image: "public/uploads/crimson.png",
+        image: "public/uploads/CRIMSON.png",
         details: "Designed for romantic gestures, this bouquet is a timeless way to express love and admiration. Available in multiple variants.",
         category: "Bouquet"
     },
