@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { products } from "@/src/pages/Products.tsx";
-interface Product {
+interface Products {
   id: number;
   name: string;
   price: number;
