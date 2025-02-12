@@ -5,6 +5,32 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+const categories = [
+  {
+    title: "Personalized Gifts",
+    icon: Gift,
+    description: "Unique gifts tailored just for them",
+    bgColor: "bg-heart-300/50", // Soft Pink
+  },
+  {
+    title: "Handcrafted Bouquets",
+    icon: Heart,
+    description: "Beautiful arrangements made with love",
+    bgColor: "bg-heart-100/50", // Soft Peach
+  },
+  {
+    title: "Love Letters",
+    icon: PenTool,
+    description: "Heartfelt messages penned by hand",
+    bgColor: "bg-heart-400/50", // Soft Purple
+  },
+  {
+    title: "Custom Hampers",
+    icon: Package,
+    description: "Curated collections of joy",
+    bgColor: "bg-heart-600/50", // Light Pink
+  },
+];
 const featuredProducts = [
   {
     id: 1,
