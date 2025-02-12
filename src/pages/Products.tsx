@@ -15,7 +15,7 @@ const products = [
         name: "Crimson",
         price: 499,
         description: "A luxurious handcrafted bouquet featuring deep red satin roses, wrapped in a pristine white paper with a soft ribbon for an elegant finish.",
-        image: "https://your-domain.com/uploads/crimson.png",
+        image: "public/uploads/crimson.png",
         details: "Designed for romantic gestures, this bouquet is a timeless way to express love and admiration. Available in multiple variants.",
         category: "Bouquet"
     },
@@ -24,7 +24,7 @@ const products = [
         name: "Truffle",
         price: 199,
         description: "A unique chocolate bouquet featuring a delightful assortment of premium chocolates, elegantly wrapped with soft fabric and a purple ribbon.",
-        image: "https://your-domain.com/uploads/truffle.png",
+        image: "public/uploads/truffle.png",
         details: "Perfect for chocolate lovers, this bouquet is a sweet surprise for birthdays, anniversaries, and celebrations.",
         category: "Bouquet"
     },
@@ -33,7 +33,7 @@ const products = [
         name: "Glowfly",
         price: 439,
         description: "A mesmerizing bouquet featuring glowing butterflies and an enchanting LED setup, wrapped in premium soft-touch paper.",
-        image: "https://your-domain.com/uploads/glowfly.png",
+        image: "public/uploads/glowfly.png",
         details: "A perfect blend of light and elegance, ideal for romantic surprises, birthdays, and unique gifts.",
         category: "Bouquet"
     },
@@ -42,7 +42,7 @@ const products = [
         name: "Golden Bliss",
         price: 2889,
         description: "A luxurious bouquet featuring 50 handcrafted roses in golden, yellow, and white hues, elegantly wrapped in premium paper for a sophisticated touch.",
-        image: "https://your-domain.com/uploads/Golden Bliss.png",
+        image: "public/uploads/Golden Bliss.png",
         details: "This luxe edition bouquet is perfect for grand gestures, anniversaries, and celebrations. Designed to leave a lasting impression.",
         category: "Bouquet"
     },
@@ -51,7 +51,7 @@ const products = [
         name: "Cupid's Message",
         price: 189,
         description: "A beautifully handcrafted explosion card filled with sweet messages, cute elements, and space for personal notes. Wrapped with a delicate pink ribbon for an adorable finish.",
-        image: "https://your-domain.com/uploads/cupid's message.png",
+        image: "public/uploads/cupid's message.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "Bouquet"
     },
@@ -60,7 +60,7 @@ const products = [
         name: "Aurora",
         price: 499,
         description: "A beautifully handcrafted 7 flower bouquet with golden theme.",
-        image: "https://your-domain.com/uploads/Aurora.png",
+        image: "public/uploads/Aurora.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "Bouquet"
     },
@@ -69,7 +69,7 @@ const products = [
         name: "Eclipse",
         price: 499,
         description: "A beautifully handcrafted 7 flower bouquet with black theme.",
-        image: "https://your-domain.com/uploads/Eclipse.png",
+        image: "public/uploads/Eclipse.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "Bouquet"
     },
@@ -78,7 +78,7 @@ const products = [
         name: "Lavender Luxe",
         price: 539,
         description: "A beautifully premium 7 flower bouquet with lavender theme.",
-        image: "https://your-domain.com/uploads/Lavender Luxe.png",
+        image: "public/uploads/Lavender Luxe.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "Bouquet"
     },
@@ -87,7 +87,7 @@ const products = [
         name: "Blossom",
         price: 499,
         description: "A beautifully handcrafted 7 flower bouquet with red and white theme.",
-        image: "https://your-domain.com/uploads/Blossom.png",
+        image: "public/uploads/Blossom.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "Bouquet"
     },
@@ -96,7 +96,7 @@ const products = [
         name: "LoveBundle",
         price: 599,
         description: "A beautifully handcrafted 7 flower bouquet with Cupid's card.",
-        image: "https://your-domain.com/uploads/LoveBundle.png",
+        image: "public/uploads/LoveBundle.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "COMBO"
     }
