@@ -28,7 +28,7 @@ const products: Product[] = [
     name: "Crimson",
     price: 499,
     description: "A luxurious handcrafted bouquet featuring deep red satin roses, wrapped in a pristine white paper with a soft ribbon for an elegant finish.",
-    image: "/uploads/crimson.png", // Update this with the correct path if needed
+    image: "/uploads/crimson.png",
     details: "Designed for romantic gestures, this bouquet is a timeless way to express love and admiration. Available in multiple variants.",
     category: "Bouquet"
   },
@@ -37,7 +37,7 @@ const products: Product[] = [
     name: "Truffle",
     price: 199,
     description: "A unique chocolate bouquet featuring a delightful assortment of premium chocolates, elegantly wrapped with soft fabric and a purple ribbon.",
-    image: "/uploads/truffle.png", // Update this with the correct path if needed
+    image: "/uploads/truffle.png",
     details: "Perfect for chocolate lovers, this bouquet is a sweet surprise for birthdays, anniversaries, and celebrations.",
     category: "Bouquet"
   },
@@ -46,7 +46,7 @@ const products: Product[] = [
     name: "Glowfly",
     price: 439,
     description: "A mesmerizing bouquet featuring glowing butterflies and an enchanting LED setup, wrapped in premium soft-touch paper.",
-    image: "/uploads/glowfly.png", // Update this with the correct path if needed
+    image: "/uploads/glowfly.png",
     details: "A perfect blend of light and elegance, ideal for romantic surprises, birthdays, and unique gifts.",
     category: "Bouquet"
   },
@@ -55,7 +55,7 @@ const products: Product[] = [
     name: "Golden Bliss",
     price: 2889,
     description: "A luxurious bouquet featuring 50 handcrafted roses in golden, yellow, and white hues, elegantly wrapped in premium paper for a sophisticated touch.",
-    image: "/uploads/Golden Bliss.png", // Update this with the correct path if needed
+    image: "/uploads/Golden Bliss.png",
     details: "This luxe edition bouquet is perfect for grand gestures, anniversaries, and celebrations. Designed to leave a lasting impression.",
     category: "Bouquet"
   },
@@ -64,7 +64,7 @@ const products: Product[] = [
     name: "Cupid's Message",
     price: 189,
     description: "A beautifully handcrafted explosion card filled with sweet messages, cute elements, and space for personal notes. Wrapped with a delicate pink ribbon for an adorable finish.",
-    image: "/uploads/cupid's message.png", // Update this with the correct path if needed
+    image: "/uploads/cupid's message.png",
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "Bouquet"
   },
@@ -73,7 +73,7 @@ const products: Product[] = [
     name: "Aurora",
     price: 499,
     description: "A beautifully handcrafted 7 flower bouquet with golden theme.",
-    image: "/uploads/Aurora.png", // Update this with the correct path if needed
+    image: "/uploads/Aurora.png",
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "Bouquet"
   },
@@ -82,7 +82,7 @@ const products: Product[] = [
     name: "Eclipse",
     price: 499,
     description: "A beautifully handcrafted 7 flower bouquet with black theme.",
-    image: "/uploads/Eclipse.png", // Update this with the correct path if needed
+    image: "/uploads/Eclipse.png",
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "Bouquet"
   },
@@ -91,7 +91,7 @@ const products: Product[] = [
     name: "Lavender Luxe",
     price: 539,
     description: "A beautifully premium 7 flower bouquet with lavender theme.",
-    image: "/public/uploads/Lavender Luxe.png", // Update this with the correct path if needed
+    image: "/uploads/Lavender Luxe.png",
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "Bouquet"
   },
@@ -100,7 +100,7 @@ const products: Product[] = [
     name: "Blossom",
     price: 499,
     description: "A beautifully handcrafted 7 flower bouquet with red and white theme.",
-    image: "/public/uploads/Blossom.png", // Update this with the correct path if needed
+    image: "/uploads/Blossom.png",
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "Bouquet"
   },
@@ -109,7 +109,7 @@ const products: Product[] = [
     name: "LoveBundle",
     price: 599,
     description: "A beautifully handcrafted 7 flower bouquet with Cupid's card.",
-    image: "/public/uploads/LoveBundle.png", // Update this with the correct path if needed
+    image: "/uploads/LoveBundle.png",
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "COMBO"
   }
@@ -178,10 +178,10 @@ export const FeaturedGiftsCarousel = ({ products = [] }: FeaturedGiftsCarouselPr
       <h2 className="text-3xl font-bold text-center mb-12 font-serif">Featured Gifts</h2>
       
       <div className="relative max-w-7xl mx-auto">
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full h-[600px] flex items-center justify-center">
           <motion.div
             key={products[index].id}
-            className="absolute inset-0 flex items-center justify-center"
+            className="w-full max-w-lg mx-auto"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
@@ -191,7 +191,7 @@ export const FeaturedGiftsCarousel = ({ products = [] }: FeaturedGiftsCarouselPr
             dragElastic={1}
             onDragEnd={handleDragEnd}
           >
-            <div className="bg-white rounded-lg shadow-xl overflow-hidden w-full max-w-lg">
+            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="aspect-square overflow-hidden">
                 <motion.img
                   src={products[index].image}
