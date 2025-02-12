@@ -9,97 +9,97 @@ import { Cart } from "@/components/Cart";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Crimson",
-    price: 499,
-    description: "A luxurious handcrafted bouquet featuring deep red satin roses, wrapped in a pristine white paper with a soft ribbon for an elegant finish.",
-    image: "/uploads/crimson.png",
-    details: "Designed for romantic gestures, this bouquet is a timeless way to express love and admiration. Available in multiple variants.",
-    category: "Bouquet"
-  },
-  {
-    id: 2,
-    name: "Truffle",
-    price: 199,
-    description: "A unique chocolate bouquet featuring a delightful assortment of premium chocolates, elegantly wrapped with soft fabric and a purple ribbon.",
-    image: "/uploads/truffle.png",
-    details: "Perfect for chocolate lovers, this bouquet is a sweet surprise for birthdays, anniversaries, and celebrations.",
-    category: "Bouquet"
-  },
-  {
-    id: 3,
-    name: "Glowfly",
-    price: 439,
-    description: "A mesmerizing bouquet featuring glowing butterflies and an enchanting LED setup, wrapped in premium soft-touch paper.",
-    image: "/uploads/glowfly.png",
-    details: "A perfect blend of light and elegance, ideal for romantic surprises, birthdays, and unique gifts.",
-    category: "Bouquet"
-  },
-  {
-    id: 4,
-    name: "Golden Bliss",
-    price: 2889,
-    description: "A luxurious bouquet featuring 50 handcrafted roses in golden, yellow, and white hues, elegantly wrapped in premium paper for a sophisticated touch.",
-    image: "/uploads/Golden Bliss.png",
-    details: "This luxe edition bouquet is perfect for grand gestures, anniversaries, and celebrations. Designed to leave a lasting impression.",
-    category: "Bouquet"
-  },
-  {
-    id: 5,
-    name: "Cupid's Message",
-    price: 189,
-    description: "A beautifully handcrafted explosion card filled with sweet messages, cute elements, and space for personal notes. Wrapped with a delicate pink ribbon for an adorable finish.",
-    image: "/uploads/cupid's message.png",
-    details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
-    category: "Bouquet"
-  },
-  {
-    id: 6,
-    name: "Aurora",
-    price: 499,
-    description: "A beautifully handcrafted 7 flower bouquet with golden theme.",
-    image: "/uploads/Aurora.png",
-    details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
-    category: "Bouquet"
-  },
-  {
-    id: 7,
-    name: "Eclipse",
-    price: 499,
-    description: "A beautifully handcrafted 7 flower bouquet with black theme.",
-    image: "/uploads/Eclipse.png",
-    details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
-    category: "Bouquet"
-  },
-  {
-    id: 8,
-    name: "Lavender Luxe",
-    price: 539,
-    description: "A beautifully premium 7 flower bouquet with lavender theme.",
-    image: "/uploads/Lavender Luxe.png",
-    details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
-    category: "Bouquet"
-  },
-  {
-    id: 9,
-    name: "Blossom",
-    price: 499,
-    description: "A beautifully handcrafted 7 flower bouquet with red and white theme.",
-    image: "/uploads/Blossom.png",
-    details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
-    category: "Bouquet"
-  },
-  {
-    id: 10,
-    name: "LoveBundle",
-    price: 599,
-    description: "A beautifully handcrafted 7 flower bouquet with Cupid's card.",
-    image: "/uploads/LoveBundle.png",
-    details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
-    category: "COMBO"
-  }
+const products = [
+    {
+        id: 1,
+        name: "Crimson",
+        price: 499,
+        description: "A luxurious handcrafted bouquet featuring deep red satin roses, wrapped in a pristine white paper with a soft ribbon for an elegant finish.",
+        image: "/uploads/crimson.png",
+        details: "Designed for romantic gestures, this bouquet is a timeless way to express love and admiration. Available in multiple variants.",
+        category: "Bouquet"
+    },
+    {
+        id: 2,
+        name: "Truffle",
+        price: 199,
+        description: "A unique chocolate bouquet featuring a delightful assortment of premium chocolates, elegantly wrapped with soft fabric and a purple ribbon.",
+        image: "/uploads/truffle.png",
+        details: "Perfect for chocolate lovers, this bouquet is a sweet surprise for birthdays, anniversaries, and celebrations.",
+        category: "Bouquet"
+    },
+    {
+        id: 3,
+        name: "Glowfly",
+        price: 439,
+        description: "A mesmerizing bouquet featuring glowing butterflies and an enchanting LED setup, wrapped in premium soft-touch paper.",
+        image: "/uploads/glowfly.png",
+        details: "A perfect blend of light and elegance, ideal for romantic surprises, birthdays, and unique gifts.",
+        category: "Bouquet"
+    },
+    {
+        id: 4,
+        name: "Golden Bliss",
+        price: 2889,
+        description: "A luxurious bouquet featuring 50 handcrafted roses in golden, yellow, and white hues, elegantly wrapped in premium paper for a sophisticated touch.",
+        image: "/uploads/Golden Bliss.png",
+        details: "This luxe edition bouquet is perfect for grand gestures, anniversaries, and celebrations. Designed to leave a lasting impression.",
+        category: "Bouquet"
+    },
+    {
+        id: 5,
+        name: "Cupid's Message",
+        price: 189,
+        description: "A beautifully handcrafted explosion card filled with sweet messages, cute elements, and space for personal notes. Wrapped with a delicate pink ribbon for an adorable finish.",
+        image: "/uploads/cupid's message.png",
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "Bouquet"
+    },
+    {
+        id: 6,
+        name: "Aurora",
+        price: 499,
+        description: "A beautifully handcrafted 7 flower bouquet with golden theme.",
+        image: "/uploads/Aurora.png",
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "Bouquet"
+    },
+    {
+        id: 7,
+        name: "Eclipse",
+        price: 499,
+        description: "A beautifully handcrafted 7 flower bouquet with black theme.",
+        image: "/uploads/Eclipse.png",
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "Bouquet"
+    },
+    {
+        id: 8,
+        name: "Lavender Luxe",
+        price: 539,
+        description: "A beautifully premium 7 flower bouquet with lavender theme.",
+        image: "/uploads/Lavender Luxe.png",
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "Bouquet"
+    },
+    {
+        id: 9,
+        name: "Blossom",
+        price: 499,
+        description: "A beautifully handcrafted 7 flower bouquet with red and white theme.",
+        image: "/uploads/Blossom.png",
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "Bouquet"
+    },
+    {
+        id: 10,
+        name: "LoveBundle",
+        price: 599,
+        description: "A beautifully handcrafted 7 flower bouquet with Cupid's card.",
+        image: "/uploads/LoveBundle.png",
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "COMBO"
+    }
 ];
 
 type Category = "All" | "Personalized Gifts" | "Handcrafted Bouquets" | "Love Letters" | "Custom Hampers";
@@ -211,18 +211,22 @@ const Products = () => {
                     <DialogTrigger asChild>
                       <Button className="flex-1 hover:bg-heart-500/10" variant="secondary">View Details</Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-2xl">
+                    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                       <DialogHeader>
-                        <DialogTitle>{product.name}</DialogTitle>
+                        <DialogTitle className="text-2xl font-serif">{product.name}</DialogTitle>
                         <DialogDescription>
-                          <div className="mt-4">
-                            <img 
-                              src={product.image} 
-                              alt={product.name}
-                              className="w-full aspect-square object-cover rounded-lg mb-4"
-                            />
-                            <p className="text-lg mb-4">{product.details}</p>
-                            <WhatsAppOrder product={product} />
+                          <div className="mt-4 space-y-4">
+                            <div className="aspect-square w-full max-w-md mx-auto overflow-hidden rounded-lg">
+                              <img 
+                                src={product.image} 
+                                alt={product.name}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <p className="text-lg">{product.details}</p>
+                            <div className="sticky bottom-0 bg-background/95 backdrop-blur py-4">
+                              <WhatsAppOrder product={product} />
+                            </div>
                           </div>
                         </DialogDescription>
                       </DialogHeader>
