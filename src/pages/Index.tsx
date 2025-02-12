@@ -52,6 +52,51 @@ const featuredProducts = [
     details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
     category: "Handmade Cards",
   },
+  {
+        id: 6,
+        name: "Aurora",
+        price: 499,
+        description: "A beautifully handcrafted 7 flower bouquet with golden theme.",
+        image: "/uploads/Aurora.png", // Update this with the correct path if needed
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "Bouquet"
+    },
+    {
+        id: 7,
+        name: "Eclipse",
+        price: 499,
+        description: "A beautifully handcrafted 7 flower bouquet with black theme.",
+        image: "/uploads/Eclipse.png", // Update this with the correct path if needed
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "Bouquet"
+    },
+    {
+        id: 8,
+        name: "Lavender Luxe",
+        price: 539,
+        description: "A beautifully premium 7 flower bouquet with lavender theme.",
+        image: "/uploads/Lavender Luxe.png", // Update this with the correct path if needed
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "Bouquet"
+    },
+    {
+        id: 9,
+        name: "Blossom",
+        price: 499,
+        description: "A beautifully handcrafted 7 flower bouquet with red and white theme.",
+        image: "/uploads/Blossom.png", // Update this with the correct path if needed
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "Bouquet"
+    },
+    {
+        id: 10,
+        name: "LoveBundle",
+        price: 599,
+        description: "A beautifully handcrafted 7 flower bouquet with Cupid's card.",
+        image: "/uploads/LoveBundle.png", // Update this with the correct path if needed
+        details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
+        category: "COMBO"
+    }
 ];
 
 const categories = [
