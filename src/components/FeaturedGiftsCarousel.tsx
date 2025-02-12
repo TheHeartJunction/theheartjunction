@@ -12,7 +12,7 @@ interface Product {
   description: string;
   image: string;
 } 
-const FeaturedGiftsCarouselProps;
+let FeaturedGiftsCarouselProps;
 interface FeaturedGiftsCarouselProps {
   products: Product[];
 }
