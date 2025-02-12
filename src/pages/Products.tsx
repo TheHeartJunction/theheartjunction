@@ -15,7 +15,7 @@ const products = [
         name: "Crimson",
         price: 499,
         description: "A luxurious handcrafted bouquet featuring deep red satin roses, wrapped in a pristine white paper with a soft ribbon for an elegant finish.",
-        image: "/uploads/crimson.png", // Update this with the correct path if needed
+        image: "https://your-domain.com/uploads/crimson.png",
         details: "Designed for romantic gestures, this bouquet is a timeless way to express love and admiration. Available in multiple variants.",
         category: "Bouquet"
     },
@@ -24,7 +24,7 @@ const products = [
         name: "Truffle",
         price: 199,
         description: "A unique chocolate bouquet featuring a delightful assortment of premium chocolates, elegantly wrapped with soft fabric and a purple ribbon.",
-        image: "/uploads/truffle.png", // Update this with the correct path if needed
+        image: "https://your-domain.com/uploads/truffle.png",
         details: "Perfect for chocolate lovers, this bouquet is a sweet surprise for birthdays, anniversaries, and celebrations.",
         category: "Bouquet"
     },
@@ -33,7 +33,7 @@ const products = [
         name: "Glowfly",
         price: 439,
         description: "A mesmerizing bouquet featuring glowing butterflies and an enchanting LED setup, wrapped in premium soft-touch paper.",
-        image: "/uploads/glowfly.png", // Update this with the correct path if needed
+        image: "https://your-domain.com/uploads/glowfly.png",
         details: "A perfect blend of light and elegance, ideal for romantic surprises, birthdays, and unique gifts.",
         category: "Bouquet"
     },
@@ -42,16 +42,16 @@ const products = [
         name: "Golden Bliss",
         price: 2889,
         description: "A luxurious bouquet featuring 50 handcrafted roses in golden, yellow, and white hues, elegantly wrapped in premium paper for a sophisticated touch.",
-        image: "/uploads/Golden Bliss.png", // Update this with the correct path if needed
+        image: "https://your-domain.com/uploads/Golden Bliss.png",
         details: "This luxe edition bouquet is perfect for grand gestures, anniversaries, and celebrations. Designed to leave a lasting impression.",
         category: "Bouquet"
     },
     {
         id: 5,
-        name: "Cupid’s Message",
+        name: "Cupid's Message",
         price: 189,
         description: "A beautifully handcrafted explosion card filled with sweet messages, cute elements, and space for personal notes. Wrapped with a delicate pink ribbon for an adorable finish.",
-        image: "/uploads/cupid's message.png", // Update this with the correct path if needed
+        image: "https://your-domain.com/uploads/cupid's message.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "Bouquet"
     },
@@ -60,7 +60,7 @@ const products = [
         name: "Aurora",
         price: 499,
         description: "A beautifully handcrafted 7 flower bouquet with golden theme.",
-        image: "/uploads/Aurora.png", // Update this with the correct path if needed
+        image: "https://your-domain.com/uploads/Aurora.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "Bouquet"
     },
@@ -69,7 +69,7 @@ const products = [
         name: "Eclipse",
         price: 499,
         description: "A beautifully handcrafted 7 flower bouquet with black theme.",
-        image: "/uploads/Eclipse.png", // Update this with the correct path if needed
+        image: "https://your-domain.com/uploads/Eclipse.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "Bouquet"
     },
@@ -78,7 +78,7 @@ const products = [
         name: "Lavender Luxe",
         price: 539,
         description: "A beautifully premium 7 flower bouquet with lavender theme.",
-        image: "/uploads/Lavender Luxe.png", // Update this with the correct path if needed
+        image: "https://your-domain.com/uploads/Lavender Luxe.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "Bouquet"
     },
@@ -87,7 +87,7 @@ const products = [
         name: "Blossom",
         price: 499,
         description: "A beautifully handcrafted 7 flower bouquet with red and white theme.",
-        image: "/uploads/Blossom.png", // Update this with the correct path if needed
+        image: "https://your-domain.com/uploads/Blossom.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "Bouquet"
     },
@@ -96,7 +96,7 @@ const products = [
         name: "LoveBundle",
         price: 599,
         description: "A beautifully handcrafted 7 flower bouquet with Cupid's card.",
-        image: "/uploads/LoveBundle.png", // Update this with the correct path if needed
+        image: "https://your-domain.com/uploads/LoveBundle.png",
         details: "Perfect for expressing heartfelt emotions, this interactive card unfolds to reveal layers of love. Ideal for birthdays, anniversaries, and special surprises.",
         category: "COMBO"
     }
@@ -186,7 +186,7 @@ const Products = () => {
               transition={{ duration: 0.3 }}
             >
               <Card className="overflow-hidden hover:shadow-xl transition-shadow bg-white/80 backdrop-blur-sm border-heart-rosegold/20">
-                <div className="h-64 overflow-hidden">
+                <div className="aspect-square overflow-hidden">
                   {product.image ? (
                     <img 
                       src={product.image} 
@@ -209,7 +209,7 @@ const Products = () => {
                 <CardFooter className="flex gap-4">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button variant="outline" className="flex-1 hover:bg-heart-500/10">View Details</Button>
+                      <Button className="flex-1 hover:bg-heart-500/10" variant="secondary">View Details</Button>
                     </DialogTrigger>
                     <DialogContent className="max-w-2xl">
                       <DialogHeader>
@@ -219,7 +219,7 @@ const Products = () => {
                             <img 
                               src={product.image} 
                               alt={product.name}
-                              className="w-full h-64 object-cover rounded-lg mb-4"
+                              className="w-full aspect-square object-cover rounded-lg mb-4"
                             />
                             <p className="text-lg mb-4">{product.details}</p>
                             <WhatsAppOrder product={product} />
